@@ -1,0 +1,90 @@
+<html>
+    <style>
+        .slide-4,
+        .slide-3,
+        .slide-2 {
+            display: none;
+        }
+    </style>
+    <body>
+        <!-- Conteudo principal -->
+        
+        <button onclick="changeSlide(-1)">
+            Anterior
+        </button>
+        <div>
+            <div class="slide-1">
+                Conteudo 1
+                <input type="text">
+            </div>
+            
+            <div class="slide-2">
+                Conteudo 2
+                <input type="text">
+            </div>
+            
+            <div class="slide-3">
+                Conteudo 3
+            </div>
+            
+            <div class="slide-4">
+                Conteudo 4
+            </div>
+        </div>
+        <button onclick="changeSlide(1)">
+            Proximo
+        </button>
+
+
+        <script>
+
+            var slidePos = 1;
+
+            function changeSlide(increment) {
+                console.log(increment);
+                console.log(document.querySelector('.slide-'+slidePos));
+                console.log(slidePos)
+                if (slidePos >= 5 ) {
+                    slidePos = 4;
+                }
+                
+                if (slidePos <= 0) {
+                    slidePos = 1;
+                }
+
+                document.querySelector('.slide-'+slidePos).style.display ="none"
+                
+                slidePos = slidePos + increment;
+                
+                if (slidePos >= 5 ) {
+                    slidePos = 4;
+                }
+                
+                if (slidePos <= 0) {
+                    slidePos = 1;
+                }
+
+                
+                document.querySelector('.slide-'+slidePos).style.display ="block"
+                console.log(document.querySelector('.slide-'+slidePos));
+
+            }
+
+        </script>
+
+        <script>
+            var x = 5;
+
+            function teste() {
+                x=4
+                console.log(x);
+
+            }
+
+            console.log(x);
+            teste();
+            console.log(x);
+        </script>
+
+    </body>
+</html>
